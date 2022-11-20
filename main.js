@@ -64,20 +64,15 @@ function resetBoard() {
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
     squares.forEach(div => div.style.backgroundColor = 'black');
-}
+} 
 
-document.querySelector('.board').addEventListener('click', () => {
+document.querySelector('body').addEventListener('click', (e) => {
     click = !click;
-    let draw = document.querySelector('#draw');
-    draw.remove();
-    let container = document.querySelector('.indicator');
-    draw = document.createElement('p');
-    draw.setAttribute('id', 'draw');
-    if (click === true) {
-        draw.textContent = "Click Off";
-        container.appendChild(draw);
-    } else if (click === false) {
-        draw.textContent = "Click On";
-        container.appendChild(draw);
-    }
+    if(e.target.tagName != 'BUTTON') {
+        if (click) {
+            document.querySelector('.toggle').textContent = "Click Off";
+        } else { 
+            document.querySelector('.toggle').textContent = "Click On";
+        }
+    }  
 });
