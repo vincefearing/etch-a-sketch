@@ -2,6 +2,10 @@
     width: 960px;
     height: 960px;
     display: grid;
+    border: 3px;
+    border-color: grey;
+    border-style: solid;
+    margin: 2px 0px 2px 0px;
 }
 
 .flex-container {
@@ -14,6 +18,17 @@
 
 .top {
     width: 960px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.footer {
     display: flex;
     justify-content: space-between;
 }

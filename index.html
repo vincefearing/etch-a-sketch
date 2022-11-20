@@ -12,7 +12,7 @@
 <body>
     <div class="flex-container">
         <div class="top">
-            <div><h1>Sketchpad</h1></div>
+            <div><h1 class="title">Sketchpad</h1></div>
             <div>
                 <input type="text" placeholder="Size of Board" value="16" onchange="setSize(this.value)">
                 <button>Set Size</button>
@@ -20,12 +20,18 @@
         </div>
         <div class="content">
             <div class="board"></div>
-            <div class="buttons">
-                <button onclick="changeColor('white')">White</button>
-                <button onclick="changeColor('random')">Color</button>
-                <button onclick="changeColor('black')">Erase</button>
-                <button onclick="resetBoard()">reset</button>
+            <div class="footer">
+                <div class="buttons">
+                    <button onclick="changeColor('white')">White</button>
+                    <button onclick="changeColor('random')">Color</button>
+                    <button onclick="changeColor('black')">Erase</button>
+                    <button onclick="resetBoard()">reset</button>
+                </div>
+                <div class="indicator">
+                    <p id="draw">Click On</p>
+                </div>
             </div>
+
         </div>
     </div>
     

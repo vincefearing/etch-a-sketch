@@ -2,6 +2,8 @@ let color = "white";
 let red = 255;
 let green = 255;
 let blue = 255;
+let click = false;
+
 function createBoard(size) {
     let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
@@ -29,7 +31,9 @@ function setSize(input) {
 }
 
 function colorSquare() {
-    this.style.backgroundColor = 'rgb(' + red + ',' + blue + ',' + green + ')';
+    if (click) {
+        this.style.backgroundColor = 'rgb(' + red + ',' + blue + ',' + green + ')';
+    }
 }
 
 function changeColor(choice) {
@@ -62,3 +66,18 @@ function resetBoard() {
     squares.forEach(div => div.style.backgroundColor = 'black');
 }
 
+document.querySelector('.board').addEventListener('click', () => {
+    click = !click;
+    let draw = document.querySelector('#draw');
+    draw.remove();
+    let container = document.querySelector('.indicator');
+    draw = document.createElement('p');
+    draw.setAttribute('id', 'draw');
+    if (click === true) {
+        draw.textContent = "Click Off";
+        container.appendChild(draw);
+    } else if (click === false) {
+        draw.textContent = "Click On";
+        container.appendChild(draw);
+    }
+});
